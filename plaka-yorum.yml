@@ -1,0 +1,36 @@
+template: Hello, %s!
+defaultName: Stranger
+
+database:
+  # the name of your JDBC driver
+  driverClass: org.postgresql.Driver
+
+  # the username
+  user: qdbvkpesepfyaa
+
+  # the password
+  password: d54c448c4ce9ba1b1e4be71f8886bef9ffb972df76ce3bb9cdb2f03c4a00894b
+
+  # the JDBC URL
+  url: jdbc:postgresql://ec2-54-247-98-162.eu-west-1.compute.amazonaws.com:5432/d4b87sclae7qtb?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
+
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.hbm2ddl.auto: create
+
+  # the maximum amount of time to wait on an empty pool before throwing an exception
+  maxWaitForConnection: 1s
+
+  # the SQL query to run when validating a connection's liveness
+  validationQuery: "/* MyApplication Health Check */ SELECT 1"
+
+  # the minimum number of connections to keep open
+  minSize: 8
+
+  # the maximum number of connections to keep open
+  maxSize: 32
+
+  # whether or not idle connections should be validated
+  checkConnectionWhileIdle: false
